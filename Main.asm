@@ -12,8 +12,8 @@ format binary as 'class'
       _void_arrstr    constant_utf8 '([Ljava/lang/String;)V'
 
       ;--- Class Name & Superclass ---
-      Test_class      constant_class _Test
-      _Test           constant_utf8 'Main'
+      Main_class      constant_class _Main
+      _Main           constant_utf8 'Main'
       Object_class    constant_class _Object
       _Object         constant_utf8 'java/lang/Object'
 
@@ -42,7 +42,9 @@ format binary as 'class'
 
       ;--- Demo Constants ---
       Hello          constant_utf8 'Hello'
+      Hello_str      constant_string Hello
       Hello_again    constant_utf8 'Hello again!'
+      Hello_again_str constant_string Hello_again
       number         constant_integer 1234
 
   end_constant_pool
@@ -50,7 +52,7 @@ format binary as 'class'
 
   ;--- Class Declaration ---
   u2 ACC_PUBLIC+ACC_SUPER    ; access flags
-  u2 Test_class              ; this class ("Test")
+  u2 Main_class              ; this class ("Main")
   u2 Object_class            ; superclass (java/lang/Object)
 
   interfaces
@@ -64,17 +66,17 @@ format binary as 'class'
     ;--- Main Method: public static void main(String[] args) ---
     method_info ACC_PUBLIC+ACC_STATIC, _main, _void_arrstr
       attribute _Code
-        u2 3   ; max_stack – enough to hold System.out, constants, etc.
-        u2 1   ; max_locals – one local (the String[] args, unused)
+        u2 3   ; max_stack â enough to hold System.out, constants, etc.
+        u2 1   ; max_locals â one local (the String[] args, unused)
         bytecode
             ; Print "Hello"
             getstatic System.out
-            ldc Hello  ; Use the constant pool index for 'Hello'
+            ldc Hello_str  ; Use the constant pool index for 'Hello'
             invokevirtual PrintStream_println
 
             ; Print "Hello again!"
             getstatic System.out
-            ldc Hello_again  ; Use the constant pool index for 'Hello again!'
+            ldc Hello_again_str  ; Use the constant pool index for 'Hello again!'
             invokevirtual PrintStream_println
 
             ; Print number (converted to String)
