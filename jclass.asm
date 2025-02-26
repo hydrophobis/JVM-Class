@@ -6,7 +6,7 @@ ACC_STATIC	 = 0x0008
 ACC_FINAL	 = 0x0010
 ACC_SUPER	 = 0x0020
 ACC_SYNCHRONIZED = 0x0020
-ACC_NATIVE	 = 0x0200
+ACC_NATIVE	 = 0x0100
 ACC_INTERFACE	 = 0x0200
 ACC_ABSTRACT	 = 0x0400
 ACC_STRICT	 = 0x0800
@@ -224,4 +224,4 @@ macro end_exceptions {
   restore exception_table_length
 }
 
-include 'bytecode.inc'
+include 'bytecode.asm'

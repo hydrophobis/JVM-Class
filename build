@@ -1,0 +1,6 @@
+cd lib
+cargo build --release
+cp target/release/deps/libname.so ../libname.so
+
+fasm Main.asm
+java -Djava.library.path=/workspaces/JVM-Class Main
