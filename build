@@ -1,7 +1,8 @@
-cd lib
+#!/bin/bash
+cd $PWD/lib
 cargo build --release
-cp target/release/deps/libname.so ../libname.so
+cp $PWD/lib/target/release/deps/libname.so $PWD/libname.so
 
-cd ..
-fasm Main.asm
-java -Djava.library.path=/workspaces/JVM-Class Main
+cd $PWD
+fasm $PWD/Main.asm
+java -Djava.library.path=$PWD Main
