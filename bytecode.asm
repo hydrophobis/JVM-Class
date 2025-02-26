@@ -440,8 +440,5 @@ macro breakpoint { db 0xca }
 
 macro impdep1 { db 0xfe }
 
-<<<<<<< HEAD
 macro impdep2 { db 0xff }
-=======
 macro impdep2 { db 0xff }
->>>>>>> df49cc1 (Initial commit)
