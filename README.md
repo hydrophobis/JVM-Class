@@ -1,9 +1,9 @@
 # JVM-Class
  Java hello world class written in Assembly
 
-This project is compiled with *fasm* and *cargo*
-Prints generic strings
-Loads a .dll or .so named either name.dll or libname.so and runs the jni function called test
+This project is compiled with *fasm* and *cargo*<br>
+Prints generic strings<br>
+Loads a .dll or .so named either name.dll or libname.so and runs the jni function called test<br>
 .dll/.so code is in the lib dir
 
 Original source of 'jclass.inc' and 
